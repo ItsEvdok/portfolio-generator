@@ -129,6 +129,7 @@ Add a New Project
 promptUser()
   .then(promptProject)
   .then(portfolioData => {
+    console.log(portfolioData);
     return generatePage(portfolioData);
   })
   .then(pageHTML => {
