@@ -14,6 +14,7 @@ const generateAbout = aboutText => {
 
 // create the projects section
 const generateProjects = projectsArr => {
+  console.log(projectsArr, 'here');
   return `
     <section class="my-3" id="portfolio">
       <h2 class="text-dark bg-primary p-2 display-inline-block">Work</h2>
@@ -38,7 +39,6 @@ const generateProjects = projectsArr => {
       ${projectsArr
         .filter(({ feature }) => !feature)
         .map(({ name, description, languages, link }) => {
-          console.log(languages);
           return `
           <div class="col-12 col-md-6 mb-2 bg-dark text-light p-3 flex-column">
             <h3 class="portfolio-item-title text-light">${name}</h3>
@@ -60,8 +60,10 @@ const generateProjects = projectsArr => {
 
 // export function to generate entire page
 module.exports = templateData => {
+  console.log(templateData);
   // destructure page data by section
   const { projects, about, ...header } = templateData;
+  console.log(projects);
 
   return `
   <!DOCTYPE html>
